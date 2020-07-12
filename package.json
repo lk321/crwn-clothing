@@ -2,20 +2,10 @@
     "name": "crwn-clothing",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.3.2",
-        "@testing-library/user-event": "^7.1.2",
-        "node-sass": "^4.14.1",
-        "prop-types": "^15.7.2",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-scripts": "3.4.1"
-    },
     "scripts": {
-        "start": "react-app-rewired start",
-        "build": "react-app-rewired build",
-        "test": "react-app-rewired test",
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
@@ -33,8 +23,15 @@
             "last 1 safari version"
         ]
     },
+    "dependencies": {
+        "node-sass": "^4.14.1",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1"
+    },
     "devDependencies": {
-        "customize-cra": "^1.0.0",
-        "react-app-rewired": "^2.1.6"
+        "@craco/craco": "^5.6.4"
     }
 }

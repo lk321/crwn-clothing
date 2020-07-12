@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
+import PropTypes from "prop-types"
 
-import MenuItem from "component/menu-item";
+import MenuItem from "component/menu-item"
 
-import "./directory.styles.scss";
+import "./directory.styles.scss"
 
 const sections = [
     {
@@ -38,7 +38,7 @@ const sections = [
         id: 5,
         linkUrl: "shop/mens",
     },
-];
+]
 
 const Dorectory = ({ children }) => (
     <div className="directory-menu">
@@ -46,10 +46,10 @@ const Dorectory = ({ children }) => (
             <MenuItem key={item.id} {...item} />
         ))}
     </div>
-);
+)
 
 Dorectory.propTypes = {
     children: PropTypes.object,
-};
+}
 
-export default Dorectory;
+export default Dorectory
