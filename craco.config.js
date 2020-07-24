@@ -7,6 +7,7 @@ module.exports = {
             component: path.resolve(__dirname, "./src/components"),
             page: path.resolve(__dirname, "./src/pages"),
             data: path.resolve(__dirname, "./src/data"),
+            util: path.resolve(__dirname, "./src/utils"),
         }
     }
 }
