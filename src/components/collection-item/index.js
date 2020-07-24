@@ -1,1 +1,1 @@
-module.exports = require('./preview-item.component')
+module.exports = require('./collection-item.component')

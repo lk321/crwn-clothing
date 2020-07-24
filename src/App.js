@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router-dom"
 
 import HomePage from "page/home"
 import ShopPage from "page/shop"
+import SignInAndUpPage from "page/sign-in-and-up"
+
+import Header from "component/header"
 
 const HatsPage = () => (
     <div>
@@ -18,12 +21,16 @@ const HatDetail = ({ match: { params } }) => (
 
 function App() {
     return (
-        <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/shop" component={ShopPage} />
-            <Route exact path="/hats" component={HatsPage} />
-            <Route path="/hats/:hatId" component={HatDetail} />
-        </Switch>
+        <div>
+            <Header />
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/shop" component={ShopPage} />
+                <Route exact path="/hats" component={HatsPage} />
+                <Route path="/hats/:hatId" component={HatDetail} />
+                <Route exact path="/signIn" component={SignInAndUpPage} />
+            </Switch>
+        </div>
     )
 }
 

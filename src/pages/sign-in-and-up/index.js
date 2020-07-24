@@ -1,0 +1,1 @@
+module.exports = require('./sign-in-and-up.component')

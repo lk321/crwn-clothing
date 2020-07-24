@@ -5,7 +5,8 @@
             "~/*": ["./*"],
             "component/*": ["./src/components/*"],
             "page/*": ["./src/pages/*"],
-            "data/*": ["./src/data/*"]
+            "data/*": ["./src/data/*"],
+            "asset/*": ["./src/assets/*"]
         }
     }
 }
