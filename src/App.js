@@ -7,7 +7,7 @@ import SignInAndUpPage from "page/sign-in-and-up"
 
 import Header from "component/header"
 
-import { auth } from "util/firebase.utils"
+import { auth, createUserProfileDocument } from "util/firebase.utils"
 
 const HatsPage = () => (
     <div>
@@ -28,9 +28,23 @@ class App extends Component {
     unsubscribeFromAuth = null
 
     componentDidMount() {
-        this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+        this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+            if (user) {
+                const userRef = await createUserProfileDocument(user)
+
+                userRef.onSnapshot(snapShot => {
+                    console.log('snapShot', snapShot.data())
+
+                    this.setState({
+                        currentUser: {
+                            id: snapShot.id,
+                            ...snapShot.data()
+                        }
+                    })
+                })
+            }
+
             this.setState({ currentUser: user })
-            console.log('USER =>', user)
         })
     }
 
@@ -40,7 +54,7 @@ class App extends Component {
 
         return (
             <div>
-                <Header currentUser={this.state.currentUser}/>
+                <Header currentUser={this.state.currentUser} />
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route exact path="/shop" component={ShopPage} />
